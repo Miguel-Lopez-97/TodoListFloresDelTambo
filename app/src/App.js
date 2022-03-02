@@ -1,38 +1,24 @@
 import React, { useState } from "react";
 import Form from "./components/Form";
+import ListGroup from "./components/ListGroup";
 import Section from "./components/Section";
-import List from "./components/List";
-
-
-
-
-const appTitle = "To-Do-app";
-const list = [
-  { id: 1, title: "test #1", completed: false },
-  { id: 2, title: "test #2" },
-  { id: 3, title: "test #3" }
-];
-
-
-
 
 const App = () => {
-  const [todoList, setTodoList] = useState(list);
+  const [groupList, setGroupList] = useState([]);
   const addTodo = (item) => {
-    setTodoList((oldlist) => [...oldlist, item]);
+    setGroupList((oldList) => [...oldList, item]);
   };
-  const removeTodo = (id) => {
-  };
+
   return <div className="ui container center aligned">
-    <Section>
-      <h1>{appTitle}</h1>
-    </Section>
-    <Section>
-      <Form addTodo={addTodo} />
-    </Section>
-    <Section>
-      <List removeTodoListProp={removeTodo} list={todoList} />
-    </Section>
+
+      <Form addTodo={addTodo} key={'form_lists'}/>
+      {groupList.map(item =><div key={'section_list_'+item.title}>
+        <Section key={'title_list_'+item.title}  title={item.title}/>
+        <ListGroup key={'list_'+item.title} title={item.title}/>
+        </div>
+      )
+      }
+      
   </div>;
 }
 export default App;
