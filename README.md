@@ -1,6 +1,6 @@
 # "🍃ToDoList Flores del Tambo🍃" 
 
- ![Image text](https://drive.google.com/uc?export=download&id=12q-elDpbFmalcgZEBeNeBUphDJdOmfSh)
+ ![Image text](https://github.com/Miguel-Lopez-97/TodoListFloresDelTambo/blob/main/Logo-FloresArom%C3%A1ticas.png)
  
  This project is an application With MERN, This is a CRUD for a ToDo List App for a Flower Company to improve its internal process
 - - - -
@@ -12,7 +12,7 @@
 - Github pages (workplace repository)
 - Notion (Methodology SCRUM Master Agile)
     - [Click here to open the link](https://www.notion.so/e05fbce4d6534a4e87737e2c396ac3ca?v=54fb50a4d0044adfbb02d2817e178cc8)
--MERN Stack
+
 
 ### Front-end TECHNOLOGIES:
 -  React : 
