@@ -8,13 +8,16 @@ const App = () => {
   const addTodo = (item) => {
     setGroupList((oldList) => [...oldList, item]);
   };
+  const removeList = listId => {
+    setGroupList(oldList=>oldList.filter(item=>item.id!==listId))
+  };
 
   return <div className="ui container center aligned">
 
       <Form addTodo={addTodo} key={'form_lists'}/>
       {groupList.map(item =><div key={'section_list_'+item.title}>
         <Section key={'title_list_'+item.title}  title={item.title}/>
-        <ListGroup key={'list_'+item.title} title={item.title}/>
+        <ListGroup key={'list_'+item.title} title={item.title} onChange={()=>removeList(item.id)} id={item.id}/>
         </div>
       )
       }

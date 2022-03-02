@@ -54,7 +54,7 @@ const Todo = ({ title, completed, removeTodoItemProp }) => {
                         </div>
                         <div className="column two wide">
                             <button
-                                oneClick={removeTodoItemProp}
+                                onClick={removeTodoItemProp}
                                 className="ui button circular icon red"
                             >
                                 <i className="white remove icon"></i>X
