@@ -3,21 +3,18 @@ import React from "react";
 
 const Form = ({ addTodo }) => {
     const [inputValue, setInputValue] = useState("");
-    
     const handleInputChange = (e) => {
     setInputValue(e.target.value);
     };
     
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        
-        if(inputValue.trim() ===
-        
-        "") return;
-        
+        if(inputValue.trim() ==="") return;
         addTodo({ title: inputValue, completed: false });
         setInputValue("");
     }
+
+    
     return (
         <form className="ui form" onSubmit={handleFormSubmit}>
             <div className="ui grid center aligned">
