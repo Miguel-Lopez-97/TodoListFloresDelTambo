@@ -1,14 +1,14 @@
 const express = require("express");
-const mongoose = require("moongoose")
+const mongoose = require("mongoose")
 
 const PORT = 3030;
 const app = express();
 
 const todoRoutes = require("./routes/todoRoutes");
 
-moongose.connect("mongodb://localhost/todolist")
+mongoose.connect("mongodb://localhost/todolist")
     .then(() => console.log("Connected successfully"))
-    .catch((err) => console.log(err));
+    .catch((err) => console.error(err));
 
 app.use("/todos", todoRoutes);
 

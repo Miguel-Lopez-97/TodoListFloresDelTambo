@@ -1,8 +1,11 @@
 const router = require("express").Router();
+const Todo = require("../models/Todo");
 
-router.get("/", (req, res) =>{
-    console.log("you`re in the intex page")
-
-});
-
+    router.get("/", (req, res) => {
+        
+        Todo.find((err, result) => {
+            if(err) throw new Error(err);
+            console.log(result);
+        });
+    });
 module.exports = router;
