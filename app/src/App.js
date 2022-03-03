@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import Footer from "./components/Footer";
-import Form from "./components/Form";
-import ListGroup from "./components/ListGroup";
-import Section from "./components/Section";
+import Footer from "./components/header_footer/Footer";
+import Form from "./components/Form/Form";
+import ListGroup from "./components/Lists/ListGroup";
+import Section from "./components/Section/Section";
+import Header from "./components/header_footer/Header";
+import './App.css'
 
 const App = () => {
   const [groupList, setGroupList] = useState([]);
@@ -13,8 +15,9 @@ const App = () => {
     setGroupList(oldList=>oldList.filter(item=>item.id!==listId))
   };
 
-  return <div className="ui container center aligned">
+  return <div className="ui container center aligned" id="Containerbody">
 
+      <Header/>
       <Form addTodo={addTodo} key={'form_lists'}/>
       {groupList.map(item =><div key={'section_list_'+item.title}>
         <Section key={'title_list_'+item.title}  title={item.title}/>
