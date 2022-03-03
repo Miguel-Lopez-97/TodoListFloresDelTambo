@@ -10,7 +10,7 @@ const Form = ({ addTodo }) => {
     const handleFormSubmit = (e) => {
         e.preventDefault();
         if(inputValue.trim() ==="") return;
-        addTodo({ title: inputValue, completed: false });
+        addTodo({ title: inputValue, completed: false , id: inputValue});
         setInputValue("");
     }
 
@@ -28,7 +28,7 @@ const Form = ({ addTodo }) => {
                     <div className="column one wide">
                     <button type="submit" className="ui button circular icon green"><i
 
-                    className="white plus icon"></i></button>
+                    className="white plus icon"></i>Enviar</button>
 
                     </div>
                 </div>

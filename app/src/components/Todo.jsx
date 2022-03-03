@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 
-
-
-
 const Todo = ({ title, completed, removeTodoItemProp }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [Value, setValue] = useState(title)
     const [tempValue, setTempValue] = useState(title);
     const [completedState, setCompleted] = useState(completed);
+
     const handleDivDoubleClick = () => {
         setIsEditing(true);
     };
@@ -25,7 +23,7 @@ const Todo = ({ title, completed, removeTodoItemProp }) => {
         setTempValue(e.target.value);
     };
     const handleButtonClick = () => {
-        setCompleted((oldcompleted) => !oldcompleted);
+        setCompleted((oldCompleted) => !oldCompleted);
     };
 
 
@@ -52,14 +50,15 @@ const Todo = ({ title, completed, removeTodoItemProp }) => {
                                 className={"ui button circular icon" + (completedState ? " blue" : " green")}
                                 onClick={handleButtonClick}
                             >
-                                <i className="white check icon"></i></button>
+                                <i className="white check icon"></i>Check</button>
                         </div>
                         <div className="column two wide">
                             <button
-                                oneClick={removeTodoItemProp}
+                                onClick={removeTodoItemProp}
                                 className="ui button circular icon red"
                             >
-                                <i className="white remove icon"></i></button>
+                                <i className="white remove icon"></i>X
+                            </button>
                         </div>
                     </>
             }
