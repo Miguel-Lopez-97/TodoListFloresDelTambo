@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Footer from "./components/Footer";
 import Form from "./components/Form";
 import ListGroup from "./components/ListGroup";
 import Section from "./components/Section";
@@ -21,6 +22,7 @@ const App = () => {
         </div>
       )
       }
+      <Footer/>
       
   </div>;
 }
