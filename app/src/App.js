@@ -25,3 +25,7 @@ const App = () => {
   </div>;
 }
 export default App;
+
+
+/* SETTODOLIST ( ( O L D L I S T ) = > O L D L I S T . F I
+L T E R ( ( I T E M ) = > I T E M . I D ! = = I D ) ) ; */
