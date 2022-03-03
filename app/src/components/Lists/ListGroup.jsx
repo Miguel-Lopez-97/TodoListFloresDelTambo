@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Form from "./Form";
-import List from "./List";
+import Form from "../Form/Form";
+import List from "../Lists/List";
 
 const  ListGroup = (props) => {
     const {title, onChange}=props;

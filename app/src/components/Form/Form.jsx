@@ -13,7 +13,6 @@ const Form = ({ addTodo }) => {
         addTodo({ title: inputValue, completed: false , id: inputValue});
         setInputValue("");
     }
-
     
     return (
         <form className="ui form" onSubmit={handleFormSubmit}>
@@ -26,9 +25,8 @@ const Form = ({ addTodo }) => {
                     </div>
 
                     <div className="column one wide">
-                    <button type="submit" className="ui button circular icon green"><i
-
-                    className="white plus icon"></i>Enviar</button>
+                    <button type="submit" className="ui inverted brown button">
+                    <i className="white plus icon"></i>Enviar</button>
 
                     </div>
                 </div>
