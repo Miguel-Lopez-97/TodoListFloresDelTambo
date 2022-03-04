@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose")
 
-const PORT = 3030;
+const PORT = 27017;
 const app = express();
 
 const todoRoutes = require("./routes/todoRoutes");
@@ -13,5 +13,5 @@ mongoose.connect("mongodb://localhost/todolist")
 app.use("/todos", todoRoutes);
 
 app.listen(PORT, () => {
-    console.log("The server is listening on port" + PORT);
+    console.log("The server is listening on port " + PORT);
 });
