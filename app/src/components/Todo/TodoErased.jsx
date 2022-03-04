@@ -64,7 +64,7 @@ const TodoErased = ({ title, completed, removeTodoItemProp, updateTodoItemProp, 
                                 className={"checkButton" + (completed ? " blue" : " green")}
                                 onClick={handleButtonClickErased}
                             >
-                                <i class="white undo icon"></i></button>
+                                <i className="white undo icon"></i></button>
                         </div>
                         <div className="column two wide">
                             <button

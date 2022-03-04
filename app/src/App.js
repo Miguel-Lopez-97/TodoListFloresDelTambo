@@ -1,14 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Footer from "./components/header_footer/Footer";
-import Form from "./components/Form/Form";
+import FormCollection from "./components/Form/FormCollection";
 import ListGroup from "./components/Lists/ListGroup";
 import Section from "./components/Section/Section";
 import Header from "./components/header_footer/Header";
 import Instructions from "./components/Instructions/Instructions";
+import todos from "./api"
+
 import './App.css'
 
 const App = () => {
   const [groupList, setGroupList] = useState([]);
+
+  const fetchList = async() =>{
+    const dataApi = await todos.get("/todos");
+    const lists = await dataApi.data.map(item=>item.category)
+    console.log(dataApi)
+    console.log(lists)
+    setGroupList(lists);
+  };
+
+  useEffect (() => {
+    fetchList();
+  }, [])
+
   const addTodo = (item) => {
     setGroupList((oldList) => [...oldList, item]);
   };
@@ -22,12 +37,12 @@ const App = () => {
 
       <Header/>
       <Instructions/>
-      <Form addTodo={addTodo} key={'form_lists'}/>
-      {groupList.map(item =><div key={'section_list_'+item.title}>
-        <Section key={'title_list_'+item.title}  title={item.title}/>
-        <ListGroup key={'list_'+item.title} title={item.title} onChange={()=>removeList(item.id)} id={item.id}/>
+      <FormCollection addTodo={addTodo} key={'form_lists'}/>
+      {groupList.length>0?groupList.map(item =><div key={'section_list_'+item}>
+        <Section key={'title_list_'+item}  title={item}/>
+        <ListGroup key={'list_'+item} title={item} onChange={()=>removeList(item.id)} id={item.id} />
         </div>
-      )
+      ):null
       }
       <Footer/>
       </div> 
@@ -35,7 +50,3 @@ const App = () => {
   )
 }
 export default App;
-
-
-/* SETTODOLIST ( ( O L D L I S T ) = > O L D L I S T . F I
-L T E R ( ( I T E M ) = > I T E M . I D ! = = I D ) ) ; */

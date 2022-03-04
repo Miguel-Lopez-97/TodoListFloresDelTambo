@@ -44,11 +44,12 @@ const  ListGroup = (props) => {
     return (
       <>
     <div className="ui container center aligned">
-        <Form addTodo={addTodo}  key={'list_form_'+title}/>
+        <Form addTodo={addTodo}  key={'list_form_'+title} titleList={title}/>
         <List 
           list={todoList}  
           key={title+'_list'} 
           updateTodoListProp={updateTodo}
+          titleList={title}
         />
         <button
         onClick={handleButtonClickErased}
@@ -61,6 +62,7 @@ const  ListGroup = (props) => {
           list={todoList}  
           key={title+'_list_erased'} 
           updateTodoListProp={updateTodo}
+          titleList={title}
         />
         <button
         onClick={handleButtonClickErased}

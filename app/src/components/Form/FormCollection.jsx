@@ -2,17 +2,16 @@ import { useState } from "react";
 import React from "react";
 import './Form.css';
 
-const Form = ({ addTodo, titleList }) => {
+const FormCollection = ({ addTodo }) => {
     const [inputValue, setInputValue] = useState("");
     const handleInputChange = (e) => {
     setInputValue(e.target.value);
     };
     
-    
     const handleFormSubmit = (e) => {
         e.preventDefault();
         if(inputValue.trim() ==="") return;
-        addTodo({ title: inputValue, completed: false, erased:false, category: titleList});
+        addTodo(inputValue);
         setInputValue("");
     }
     
@@ -22,7 +21,7 @@ const Form = ({ addTodo, titleList }) => {
                 <div className="">
                     <div className="left floated mini ui">
                     <input id="textBox" value={inputValue} onChange={handleInputChange} type="text"
-                    placeholder="Ingrese su tarea"
+                    placeholder="Ingrese el Nombre de la Nueva Lista"
                     />
                     </div>
 
@@ -37,4 +36,4 @@ const Form = ({ addTodo, titleList }) => {
         );
 }
 
-export default Form;
+export default FormCollection;

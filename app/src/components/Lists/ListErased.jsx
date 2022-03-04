@@ -2,8 +2,8 @@ import React from "react";
 import TodoErased from "../Todo/TodoErased";
 
 
-const ListErased = ({ list, removeTodoListProp, updateTodoListProp, update}) => {
-    const renderedListCompleted = list.map((item) => item.erased?item.completed?
+const ListErased = ({ list, removeTodoListProp, updateTodoListProp, titleList}) => {
+    const renderedListCompleted = list.map((item) => item.erased?item.completed?item.category===titleList?
             <TodoErased   title={item.title} 
                     completed={item.completed}
                     removeTodoItemProp={()=>removeTodoListProp(item._id)} 
@@ -11,13 +11,14 @@ const ListErased = ({ list, removeTodoListProp, updateTodoListProp, update}) => 
                     key={"task_erased"+item._id} 
                     erased={item.erased}
             />
+            :null
             :null
             :null
             ).filter(element => {
                 return element !== null;
               });
     const renderedListUncompleted = list.map((item) => item.erased?item.completed?
-            null:
+            null:item.category===titleList?
             <TodoErased   title={item.title} 
                     completed={item.completed}
                     removeTodoItemProp={()=>removeTodoListProp(item._id)} 
@@ -25,6 +26,7 @@ const ListErased = ({ list, removeTodoListProp, updateTodoListProp, update}) => 
                     key={"task_erased"+item._id} 
                     erased={item.erased}
             />
+            :null
             :null
             ).filter(element => {
                 return element !== null;
