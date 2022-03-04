@@ -1,10 +1,3 @@
-Application developed to improve the productivity of the employees of the company Flores del Tambo.
-
-You will find an application that allows the organization of daily tasks of the production processes
-with functionalities that allow you to add tasks, edit them in things that deserve to make visible completed tasks and tasks to be completed
-as well as delete the added tasks
-
-
 # "🍃ToDoList Flores del Tambo🍃" 
 
  ![Image text](https://github.com/Miguel-Lopez-97/TodoListFloresDelTambo/blob/main/Logo-FloresArom%C3%A1ticas.png)
@@ -26,8 +19,8 @@ as well as delete the added tasks
  > ⚠️ _You'll need _"Node.js"_ to run this project in your computer._ 
  1. open the terminal and write `-cd app` to open de front-end folder (app) and install these dependencies  :   
     - `npm install`
-    - then `npm start`
     - then `npm install axios`
+    - then `npm start`
 
 ### Back-end TECHNOLOGIES:
  -  Express :   
@@ -42,7 +35,8 @@ as well as delete the added tasks
    3. open the terminal and write `-cd backend` to open de Back-end folder and install these dependencies  :   
     - `npm install cors` 
     
- > ⚠️ _"To get the Application running you'll need to run the frontend, backend and the table in h2-console server at the same time."_
+ > ⚠️ _"To get the Application running you'll need to run the frontend, backend server at the same time."_
+ > Open the terminal and write `-cd backend` to open de Back-end folder and run it `node index`
  
 - - - -
 ## MEMBERS
