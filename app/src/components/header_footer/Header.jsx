@@ -1,11 +1,11 @@
-import Logo from '../../assets/img/Logo_Flores_del_Tambo.svg'
+import Logo from '../../assets/img/Logo tambo black.png'
 import  './Header.css'
 
 
 const Header = () => {
     return ( 
         <header className='Containerheader'>
-            <img  src={Logo} alt={'logotipo'}/>
+            <img className='logoTambo' src={Logo} alt={'logotipo'}/>
         </header>
     );
 }

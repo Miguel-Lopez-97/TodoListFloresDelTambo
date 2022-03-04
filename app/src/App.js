@@ -4,6 +4,7 @@ import Form from "./components/Form/Form";
 import ListGroup from "./components/Lists/ListGroup";
 import Section from "./components/Section/Section";
 import Header from "./components/header_footer/Header";
+import Instructions from "./components/Instructions/Instructions";
 import './App.css'
 
 const App = () => {
@@ -15,9 +16,12 @@ const App = () => {
     setGroupList(oldList=>oldList.filter(item=>item.id!==listId))
   };
 
-  return <div className="ui container center aligned" id="Containerbody">
+  return (
+  <>
+  <div className="ui container center aligned" id="Containerbody">
 
       <Header/>
+      <Instructions/>
       <Form addTodo={addTodo} key={'form_lists'}/>
       {groupList.map(item =><div key={'section_list_'+item.title}>
         <Section key={'title_list_'+item.title}  title={item.title}/>
@@ -26,8 +30,9 @@ const App = () => {
       )
       }
       <Footer/>
-      
-  </div>;
+      </div> 
+    </>  
+  )
 }
 export default App;
 

@@ -1,7 +1,6 @@
 #Containerbody {
     background-image: url('./assets/img/Fondo.png');
     background-repeat: no-repeat;
-    width: 1440px;
-    height: 100vh;
-   
+    background-size: cover;
+    width: 100%;  
 }
