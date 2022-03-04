@@ -10,8 +10,22 @@
 }
 
 hr{
-    border: 10px solid #FCD5CE;
+    border: 6px solid #FCD5CE;
     margin-bottom: 4vw;
+}
+
+
+@media only screen and (max-width: 380px) {
+    /*mobile phones */
+    .instructionsText {
+        font-size: small; 
+    }
+    .importantTitle {
+        font-size: medium;
+    }
+    h1 {
+        font-size: medium;
+    }
 }
 
 
