@@ -1,8 +1,10 @@
 import React from "react";
 import TodoErased from "../Todo/TodoErased";
+import Header from "../header_footer/Header";
+import "./Lists.css"
 
 
-const ListErased = ({ list, removeTodoListProp, updateTodoListProp, titleList}) => {
+const ListErased = ({ list, removeTodoListProp, updateTodoListProp, titleList, handleButtonClickErased}) => {
     const renderedListCompleted = list.map((item) => item.erased?item.completed?item.category===titleList?
             <TodoErased   title={item.title} 
                     completed={item.completed}
@@ -33,12 +35,19 @@ const ListErased = ({ list, removeTodoListProp, updateTodoListProp, titleList}) 
               });
         console.log(renderedListCompleted, renderedListUncompleted)
     return (
-        <div className="ui grid center aligned">
+        <>
+        <Header/>
+        <div className="ui divModal">
             <h1>Tareas Completadas Eliminadas</h1>
             {renderedListCompleted.length>0?renderedListCompleted:<p>No hay Tareas Eliminadas</p>}
             <h1>Tareas sin Completar Eliminadas</h1>
             {renderedListUncompleted.length>0?renderedListUncompleted:<p>No hay Tareas Eliminadas</p>}
+            <button
+        onClick={handleButtonClickErased}
+        className="deleteListButton"
+        >Volver a tareas</button>
         </div>
+        </>
     );
 };
 

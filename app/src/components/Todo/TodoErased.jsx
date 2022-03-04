@@ -42,7 +42,7 @@ const TodoErased = ({ title, completed, removeTodoItemProp, updateTodoItemProp, 
     };
 
     return (
-        <div className="row" style={{display:(erasedState ? "flex" : "none")}}>
+        <div className="divTodoErased" style={{display:(erasedState ? "flex" : "none")}}>
             {
                 isEditing ?
                     <div className="column seven wide">
@@ -59,6 +59,7 @@ const TodoErased = ({ title, completed, removeTodoItemProp, updateTodoItemProp, 
                         <div className="column five wide" onDoubleClick={handleDivDoubleClick}>
                             <h2 id="listName" className={"ui header" + (completed ? " green" : "")}>{Value}</h2>
                         </div>
+                        <div className="divTodoErasedButtons">
                         <div className="column one wide">
                             <button
                                 className={"checkButton" + (completed ? " blue" : " green")}
@@ -74,6 +75,7 @@ const TodoErased = ({ title, completed, removeTodoItemProp, updateTodoItemProp, 
                                 <i className="trash white icon"></i>
 
                             </button>
+                        </div>
                         </div>
                     </>
             }

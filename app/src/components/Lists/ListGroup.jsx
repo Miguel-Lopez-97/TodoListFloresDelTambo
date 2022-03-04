@@ -6,7 +6,7 @@ import './Lists.css';
 import todos from "../../api";
 
 const  ListGroup = (props) => {
-    const {title, onChange}=props;
+    const {title}=props;
     const [todoList, setTodoList] = useState([]);
     const [modalState, setModal] = useState(false);
     
@@ -56,18 +56,15 @@ const  ListGroup = (props) => {
         className="deleteListButton"
         >Mostrar lista con tareas eliminadas</button>
     </div>
-    <div id="modal" className={"ui modal" + (modalState ? " active" : "")}>
+    <div className={"modalWindows" + (modalState ? " activeModal" : "")}>
       <ListErased
           removeTodoListProp={removeTodo} 
           list={todoList}  
           key={title+'_list_erased'} 
           updateTodoListProp={updateTodo}
           titleList={title}
+          handleButtonClickErased={()=>handleButtonClickErased()}
         />
-        <button
-        onClick={handleButtonClickErased}
-        className="deleteListButton"
-        >Volver a tareas</button>
     </div>
     </>);
   }

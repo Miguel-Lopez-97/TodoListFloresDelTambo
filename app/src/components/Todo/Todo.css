@@ -44,3 +44,15 @@
     color: black;
     font-family: 'Ribeye', cursive;
 }
+
+.divTodoErased{
+    width: 80%;
+    justify-content: space-around;
+    display: flex;
+    text-align: center;
+}
+.divTodoErasedButtons{
+    display: flex;
+    width: 15%;
+    justify-content: space-between;
+}
