@@ -1,0 +1,21 @@
+.Containerfooter {
+    background-color: #FEC5BB;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position:absolute ;
+    align-items: center;
+    padding: 9px 50px;
+    width: 1440px;
+    height: 44px;
+    left: 0px;
+    top: 100vh;    
+}
+
+.Containerfooter img {
+    margin: 4rem
+}
+
+.Containerfooter h3 {
+    margin-bottom: 1px;
+}

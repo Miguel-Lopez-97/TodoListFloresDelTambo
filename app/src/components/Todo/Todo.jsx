@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './Todo.css';
 
 const Todo = ({ title, completed, removeTodoItemProp }) => {
     const [isEditing, setIsEditing] = useState(false);
@@ -26,7 +27,6 @@ const Todo = ({ title, completed, removeTodoItemProp }) => {
         setCompleted((oldCompleted) => !oldCompleted);
     };
 
-
     return (
         <div className="row">
             {
@@ -43,21 +43,21 @@ const Todo = ({ title, completed, removeTodoItemProp }) => {
                     </div> :
                     <>
                         <div className="column five wide" onDoubleClick={handleDivDoubleClick}>
-                            <h2 className={"ui header" + (completedState ? " green" : "")}>{Value}</h2>
+                            <h2 id="listName" className={"ui header" + (completedState ? " green" : "")}>{Value}</h2>
                         </div>
                         <div className="column one wide">
                             <button
-                                className={"ui button circular icon" + (completedState ? " blue" : " green")}
+                                className={"checkButton" + (completedState ? " blue" : " green")}
                                 onClick={handleButtonClick}
                             >
-                                <i className="white check icon"></i>Check</button>
+                                <i className="white check icon"></i></button>
                         </div>
                         <div className="column two wide">
                             <button
                                 onClick={removeTodoItemProp}
-                                className="ui button circular icon red"
+                                className="removeXButton"
                             >
-                                <i className="white remove icon"></i>X
+                                <i className="white remove icon"></i>
                             </button>
                         </div>
                     </>

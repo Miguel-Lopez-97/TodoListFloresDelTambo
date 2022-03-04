@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Form from "../Form/Form";
 import List from "../Lists/List";
+import './Lists.css';
 
 const  ListGroup = (props) => {
     const {title, onChange}=props;
@@ -17,9 +18,9 @@ const  ListGroup = (props) => {
         <Form addTodo={addTodo}  key={'list_form_'+title}/>
         <List removeTodoListProp={removeTodo} list={todoList}  key={title+'_list'}/>
         <button
-                                onClick={onChange}
-                                className="ui button circular icon red"
-                            >X List</button>
+        onClick={onChange}
+        className="deleteListButton"
+        >Eliminar lista</button>
     </div>;
   }
   export default ListGroup;
