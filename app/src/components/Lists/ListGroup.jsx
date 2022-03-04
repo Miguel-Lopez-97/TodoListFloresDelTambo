@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Form from "../Form/Form";
-import List from "../Lists/List";
+import List from "./List";
+import ListErased from "./ListErased";
 import './Lists.css';
 import todos from "../../api";
 
 const  ListGroup = (props) => {
     const {title, onChange}=props;
     const [todoList, setTodoList] = useState([]);
+    const [modalState, setModal] = useState(false);
     
     useEffect (() => {
       async function fetchList(){
@@ -29,7 +31,17 @@ const  ListGroup = (props) => {
       await todos.put(`/todos/${id}`, item)
     };
 
-    return <div className="ui container center aligned">
+    const handleButtonClickErased = () => {
+      setModal((oldCompleted) => {
+          const newState = !oldCompleted;
+          return newState;
+      });
+  };
+
+
+    return (
+      <>
+    <div className="ui container center aligned">
         <Form addTodo={addTodo}  key={'list_form_'+title}/>
         <List 
           removeTodoListProp={removeTodo} 
@@ -38,9 +50,18 @@ const  ListGroup = (props) => {
           updateTodoListProp={updateTodo}
         />
         <button
-        onClick={removeTodo}
+        onClick={handleButtonClickErased}
         className="deleteListButton"
-        >Eliminar lista</button>
-    </div>;
+        >Mostrar lista con tareas eliminadas</button>
+    </div>
+    <div className={"ui modal" + (modalState ? " active" : "")}>
+      <ListErased
+          removeTodoListProp={removeTodo} 
+          list={todoList}  
+          key={title+'_list_erased'} 
+          updateTodoListProp={updateTodo}
+        />
+    </div>
+    </>);
   }
   export default ListGroup;

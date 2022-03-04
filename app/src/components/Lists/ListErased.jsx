@@ -1,14 +1,14 @@
 import React from "react";
-import Todo from "../Todo/Todo";
+import TodoErased from "../Todo/TodoErased";
 
 
-const List = ({ list, removeTodoListProp, updateTodoListProp }) => {
-    const renderedList = list.map((item) => item.erased===true?null:
-            <Todo   title={item.title} 
+const ListErased = ({ list, removeTodoListProp, updateTodoListProp}) => {
+    const renderedList = list.map((item) => 
+            <TodoErased   title={item.title} 
                     completed={item.completed}
                     removeTodoItemProp={()=>removeTodoListProp(item._id)} 
                     updateTodoItemProp={(updatedTitle)=>updateTodoListProp(item._id, updatedTitle)} 
-                    key={"task"+item._id} 
+                    key={"task_erased"+item._id} 
                     erased={item.erased}
             />
             );
@@ -20,7 +20,7 @@ const List = ({ list, removeTodoListProp, updateTodoListProp }) => {
 };
 
 
-export default List;
+export default ListErased;
 
 
 
