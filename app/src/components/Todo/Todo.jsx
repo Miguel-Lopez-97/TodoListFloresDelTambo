@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import './Todo.css';
 
-const Todo = ({ title, completed, removeTodoItemProp, updateTodoItemProp }) => {
+const Todo = ({ title, completed, removeTodoItemProp, updateTodoItemProp, erased }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [Value, setValue] = useState(title)
     const [tempValue, setTempValue] = useState(title);
     const [completedState, setCompleted] = useState(completed);
+    const [erasedState, setErased] = useState(erased);
 
     const handleDivDoubleClick = () => {
         setIsEditing(true);
@@ -24,7 +25,7 @@ const Todo = ({ title, completed, removeTodoItemProp, updateTodoItemProp }) => {
     const handleInputOnChange = (e) => {
         setTempValue(e.target.value);
     };
-    const handleButtonClick = () => {
+    const handleButtonClickCompleted = () => {
         setCompleted((oldCompleted) => {
             const newState = !oldCompleted;
             updateTodoItemProp({ completed: newState });
@@ -32,8 +33,16 @@ const Todo = ({ title, completed, removeTodoItemProp, updateTodoItemProp }) => {
         });
     };
 
+    const handleButtonClickErased = () => {
+        setErased((oldCompleted) => {
+            const newState = !oldCompleted;
+            updateTodoItemProp({ erased: newState });
+            return newState;
+        });
+    };
+
     return (
-        <div className="row">
+        <div className="row" style={{display:(erasedState ? "none" : "flex")}}>
             {
                 isEditing ?
                     <div className="column seven wide">
@@ -53,13 +62,13 @@ const Todo = ({ title, completed, removeTodoItemProp, updateTodoItemProp }) => {
                         <div className="column one wide">
                             <button
                                 className={"checkButton" + (completedState ? " blue" : " green")}
-                                onClick={handleButtonClick}
+                                onClick={handleButtonClickCompleted}
                             >
                                 <i className="white check icon"></i></button>
                         </div>
                         <div className="column two wide">
                             <button
-                                onClick={removeTodoItemProp}
+                                onClick={handleButtonClickErased}
                                 className="removeXButton"
                             >
                                 <i className="white remove icon"></i>
