@@ -56,7 +56,7 @@ const  ListGroup = (props) => {
         className="deleteListButton"
         >Mostrar lista con tareas eliminadas</button>
     </div>
-    <div className={"ui modal" + (modalState ? " active" : "")}>
+    <div id="modal" className={"ui modal" + (modalState ? " active" : "")}>
       <ListErased
           removeTodoListProp={removeTodo} 
           list={todoList}  
