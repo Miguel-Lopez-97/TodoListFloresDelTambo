@@ -27,3 +27,7 @@
     border-color: transparent;
     color: gray;
   }
+
+  #formContainer{
+      margin-bottom: 4vw;
+  }

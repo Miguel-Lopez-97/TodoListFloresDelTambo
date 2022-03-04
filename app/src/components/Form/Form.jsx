@@ -17,7 +17,7 @@ const Form = ({ addTodo }) => {
     
     return (
         <form className="ui form" onSubmit={handleFormSubmit}>
-            <div className="ui grid center aligned">
+            <div id="formContainer" className="ui grid center aligned">
                 <div className="row">
                     <div className="column five wide">
                     <input id="textBox" value={inputValue} onChange={handleInputChange} type="text"
@@ -26,7 +26,7 @@ const Form = ({ addTodo }) => {
                     </div>
 
                     <div className="column one wide">
-                    <button type="submit" id="AddTaskButton">
+                    <button type="submit" id="AddTaskButton" data-tooltip="Ingresa tu tarea" data-position="top left" data-inverted="">
                     <i className="white plus icon"></i></button>
 
                     </div>

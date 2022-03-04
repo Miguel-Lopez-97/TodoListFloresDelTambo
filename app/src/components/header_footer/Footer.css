@@ -1,15 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Ribeye+Marrow&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
 .Containerfooter {
     background-color: #FEC5BB;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    position:absolute ;
     align-items: center;
     padding: 9px 50px;
-    width: 1440px;
+    width: 100%;
     height: 44px;
     left: 0px;
-    top: 100vh;    
+    top: 100vh;
 }
 
 .Containerfooter img {
@@ -18,4 +24,27 @@
 
 .Containerfooter h3 {
     margin-bottom: 1px;
+    font-family: Ribeye;
 }
+
+.devContainer{
+    background-color: #FCD5CE;
+    text-align: center;
+    font-family: Ribeye;
+    font-size: small;
+}
+
+.devFooter{
+    background-color: #FCD5CE;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.developerLogo{
+    width: 5vw;
+    cursor: pointer;
+    margin: 0 2px 0 2px;
+}
+

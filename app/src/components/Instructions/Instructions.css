@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Ribeye+Marrow&display=swap');
+
+.instructionsText{
+    font-family: Ribeye;
+    font-size: larger;
+}
+
+.importantTitle{
+    font-family: Ribeye Marrow;
+}
+
+hr{
+    border: 10px solid #FCD5CE;
+    margin-bottom: 4vw;
+}
+
+
