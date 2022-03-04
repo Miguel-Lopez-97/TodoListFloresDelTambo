@@ -7,12 +7,12 @@ import './Footer.css';
 
 const Footer = () => {
     return ( 
-<>
+<footer className='Containerfot'>
 
-    <footer className='Containerfooter'>
+    <div className='Containerfooter'>
         <h3>Flores del Tambo 2022</h3>
         <img src={Corporation} alt={'imgcorporation'}/>
-        </footer>
+        </div>
 
     <div className='devContainer'>       
     <p className="devText">Developed By</p>  
@@ -23,7 +23,7 @@ const Footer = () => {
     <a href='https://github.com/santilopezco'><img className='developerLogo' src={LogoSanti} alt={'logosanti'} /></a>
     </div>
 
-</>
+</footer>
     );
 }
 

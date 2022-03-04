@@ -1,6 +1,7 @@
 import { useState } from "react";
 import React from "react";
 import './Form.css';
+import Todo from "../Todo/Todo";
 
 const Form = ({ addTodo }) => {
     const [inputValue, setInputValue] = useState("");
@@ -16,16 +17,16 @@ const Form = ({ addTodo }) => {
     }
     
     return (
-        <form className="ui form" onSubmit={handleFormSubmit}>
-            <div id="formContainer" className="ui grid center aligned">
-                <div className="row">
-                    <div className="column five wide">
+        <form className="ui centered card" onSubmit={handleFormSubmit}>
+            <div id="formContainer" className="content" >
+                <div className="">
+                    <div className="left floated mini ui">
                     <input id="textBox" value={inputValue} onChange={handleInputChange} type="text"
                     placeholder="Ingrese su tarea"
                     />
                     </div>
 
-                    <div className="column one wide">
+                    <div className="">
                     <button type="submit" id="AddTaskButton" data-tooltip="Ingresa tu tarea" data-position="top left" data-inverted="">
                     <i className="white plus icon"></i></button>
 
