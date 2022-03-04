@@ -10,11 +10,12 @@ const  ListGroup = (props) => {
     const [todoList, setTodoList] = useState([]);
     const [modalState, setModal] = useState(false);
     
+    const fetchList = async() =>{
+      const {data} = await todos.get("/todos");
+      setTodoList(data);
+    };
+
     useEffect (() => {
-      async function fetchList(){
-        const {data} = await todos.get("/todos");
-        setTodoList(data);
-      }
       fetchList();
     }, [])
 
@@ -32,6 +33,7 @@ const  ListGroup = (props) => {
     };
 
     const handleButtonClickErased = () => {
+      fetchList();
       setModal((oldCompleted) => {
           const newState = !oldCompleted;
           return newState;
@@ -44,7 +46,6 @@ const  ListGroup = (props) => {
     <div className="ui container center aligned">
         <Form addTodo={addTodo}  key={'list_form_'+title}/>
         <List 
-          removeTodoListProp={removeTodo} 
           list={todoList}  
           key={title+'_list'} 
           updateTodoListProp={updateTodo}
@@ -61,6 +62,10 @@ const  ListGroup = (props) => {
           key={title+'_list_erased'} 
           updateTodoListProp={updateTodo}
         />
+        <button
+        onClick={handleButtonClickErased}
+        className="deleteListButton"
+        >Volver a tareas</button>
     </div>
     </>);
   }

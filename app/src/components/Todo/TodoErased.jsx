@@ -5,7 +5,6 @@ const TodoErased = ({ title, completed, removeTodoItemProp, updateTodoItemProp, 
     const [isEditing, setIsEditing] = useState(false);
     const [Value, setValue] = useState(title)
     const [tempValue, setTempValue] = useState(title);
-    const [completedState, setCompleted] = useState(completed);
     const [erasedState, setErased] = useState(erased);
 
     const handleDivDoubleClick = () => {
@@ -25,24 +24,25 @@ const TodoErased = ({ title, completed, removeTodoItemProp, updateTodoItemProp, 
     const handleInputOnChange = (e) => {
         setTempValue(e.target.value);
     };
-    const handleButtonClickCompleted = () => {
-        setCompleted((oldCompleted) => {
-            const newState = !oldCompleted;
-            updateTodoItemProp({ completed: newState });
-            return newState;
-        });
-    };
 
     const handleButtonClickErased = () => {
-        setErased((oldCompleted) => {
-            const newState = !oldCompleted;
-            updateTodoItemProp({ erased: newState });
-            return newState;
-        });
+        if (window.confirm("¿Desea retornar la tarea a la lista?")){
+            setErased((oldCompleted) => {
+                const newState = !oldCompleted;
+                updateTodoItemProp({ erased: newState });
+                return newState;
+            });
+        }
+    };
+
+    const handleButtonClickDelete = () => {
+        if (window.confirm("¿Desea Eliminar la tarea de la base de datos para siempre?")) {
+            removeTodoItemProp()
+          }
     };
 
     return (
-        <div className="row" /* style={{display:(erasedState ? "flex" : "none")}} */>
+        <div className="row" style={{display:(erasedState ? "flex" : "none")}}>
             {
                 isEditing ?
                     <div className="column seven wide">
@@ -57,21 +57,22 @@ const TodoErased = ({ title, completed, removeTodoItemProp, updateTodoItemProp, 
                     </div> :
                     <>
                         <div className="column five wide" onDoubleClick={handleDivDoubleClick}>
-                            <h2 id="listName" className={"ui header" + (completedState ? " green" : "")}>{Value}</h2>
+                            <h2 id="listName" className={"ui header" + (completed ? " green" : "")}>{Value}</h2>
                         </div>
                         <div className="column one wide">
                             <button
-                                className={"checkButton" + (completedState ? " blue" : " green")}
-                                onClick={handleButtonClickCompleted}
+                                className={"checkButton" + (completed ? " blue" : " green")}
+                                onClick={handleButtonClickErased}
                             >
-                                <i className="white check icon"></i></button>
+                                <i class="white undo icon"></i></button>
                         </div>
                         <div className="column two wide">
                             <button
-                                onClick={handleButtonClickErased}
+                                onClick={handleButtonClickDelete}
                                 className="removeXButton"
                             >
-                                <i className="white remove icon"></i>
+                                <i className="trash white icon"></i>
+
                             </button>
                         </div>
                     </>

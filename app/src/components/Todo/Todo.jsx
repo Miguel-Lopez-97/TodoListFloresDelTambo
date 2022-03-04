@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './Todo.css';
 
-const Todo = ({ title, completed, removeTodoItemProp, updateTodoItemProp, erased }) => {
+const Todo = ({ title, completed, updateTodoItemProp, erased }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [Value, setValue] = useState(title)
     const [tempValue, setTempValue] = useState(title);
