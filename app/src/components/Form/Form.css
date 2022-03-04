@@ -26,8 +26,10 @@
     background-color: #D8E2DC;
     border-color: transparent;
     color: gray;
+    margin-top: 0.3rem;
   }
 
   #formContainer{
       margin-bottom: 4vw;
   }
+
