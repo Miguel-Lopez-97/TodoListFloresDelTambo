@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#AddTaskButton{
+    background-color: #FEC89A;
+    color: white;
+    padding: 1vw;
+    border-color: transparent;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+#AddTaskButton:hover{
+    background-color: white;
+    color: #FEC89A;
+    border-color: #FEC89A;
+    border-width: 3px;
+}
+
+#textBox{
+    background-color: #D8E2DC;
+    border-color: transparent;
+    color: gray;
+  }

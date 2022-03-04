@@ -1,5 +1,6 @@
 import { useState } from "react";
 import React from "react";
+import './Form.css';
 
 const Form = ({ addTodo }) => {
     const [inputValue, setInputValue] = useState("");
@@ -19,14 +20,14 @@ const Form = ({ addTodo }) => {
             <div className="ui grid center aligned">
                 <div className="row">
                     <div className="column five wide">
-                    <input value={inputValue} onChange={handleInputChange} type="text"
-                    placeholder="Enter something to do..."
+                    <input id="textBox" value={inputValue} onChange={handleInputChange} type="text"
+                    placeholder="Ingrese su tarea"
                     />
                     </div>
 
                     <div className="column one wide">
-                    <button type="submit" className="ui inverted brown button">
-                    <i className="white plus icon"></i>Enviar</button>
+                    <button type="submit" id="AddTaskButton">
+                    <i className="white plus icon"></i></button>
 
                     </div>
                 </div>

@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Ribeye+Marrow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ribeye&display=swap');
+
+
+.removeXButton{
+    background-color: #FEC89A;
+    color: white;
+    padding: 1vw;
+    border-color: transparent;
+    border-radius: 15%;
+    -webkit-border-radius: 15%;
+    -moz-border-radius: 15%;
+    -ms-border-radius: 15%;
+    -o-border-radius: 15%;
+}
+
+.removeXButton:hover{
+    background-color: white;
+    color: #FEC89A;
+    border-color: #FEC89A;
+    border-width: 2px;
+}
+
+.checkButton{
+    background-color: #FEC89A;
+    color: white;
+    padding: 1vw;
+    border-color: transparent;
+    border-radius: 15%;
+    -webkit-border-radius: 15%;
+    -moz-border-radius: 15%;
+    -ms-border-radius: 15%;
+    -o-border-radius: 15%;
+}
+
+.checkButton:hover{
+    background-color: white;
+    color: #FEC89A;
+    border-color: #FEC89A;
+    border-width: 2px;
+}
+
+#listName{
+    color: black;
+    font-family: 'Ribeye', cursive;
+}
