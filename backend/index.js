@@ -6,12 +6,13 @@ const app = express();
 
 const todoRoutes = require("./routes/todoRoutes");
 
-const connectionOption = { useUnifiedTopology: true, 
-    useNewUrlParser:true, useFindAndModify:false };
+/*const connectionOption = { useUnifiedTopology: true, 
+    useNewUrlParser:true, useFindAndModify:false };*/
 
-app.use(express.json())
+app.use(express.json());
+//app.use(cors());
 
-mongoose.connect("mongodb://localhost/todolist", connectionOptions)
+mongoose.connect("mongodb://localhost/todolist" /*connectionOption*/)
     .then(() => console.log("Connected successfully"))
     .catch((err) => console.error(err));
 
