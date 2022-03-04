@@ -11,7 +11,7 @@ const Form = ({ addTodo }) => {
     const handleFormSubmit = (e) => {
         e.preventDefault();
         if(inputValue.trim() ==="") return;
-        addTodo({ title: inputValue, completed: false});
+        addTodo({ title: inputValue, completed: false, erased:false});
         setInputValue("");
     }
     
