@@ -19,8 +19,8 @@
  > ⚠️ _You'll need _"Node.js"_ to run this project in your computer._ 
  1. open the terminal and write `-cd app` to open de front-end folder (app) and install these dependencies  :   
     - `npm install`
-    - then `npm start`
     - then `npm install axios`
+    - then `npm start`
 
 ### Back-end TECHNOLOGIES:
  -  Express :   
