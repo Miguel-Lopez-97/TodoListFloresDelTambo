@@ -20,14 +20,20 @@
  1. open the terminal and write `-cd app` to open de front-end folder (app) and install these dependencies  :   
     - `npm install`
     - then `npm start`
+    - then `npm install axios`
 
 ### Back-end TECHNOLOGIES:
  -  Express :   
    1. open the terminal and write `-cd backend` to open de Back-end folder and install these dependencies  :   
     - `npm --save express`
+    
  -  Mongo :   
-   1. open the terminal and write `-cd backend` to open de Back-end folder and install these dependencies  :   
+   2. open the terminal and write `-cd backend` to open de Back-end folder and install these dependencies  :   
     - `npm --save mongooes` 
+    
+ -  Cors :   
+   3. open the terminal and write `-cd backend` to open de Back-end folder and install these dependencies  :   
+    - `npm install cors` 
     
  > ⚠️ _"To get the Application running you'll need to run the frontend, backend and the table in h2-console server at the same time."_
  
@@ -35,7 +41,7 @@
 ## MEMBERS
 - Estefany Azocar @[EstefaniAzocar](https://github.com/EstefaniAzocar)
     -  _(SIMPLON - Colombia)_
-       -  _(Front-end)_
+       -  _(Front-end|Back-end)_
 - Santiago López Bernal @[santilopezco](https://github.com/santilopezco)
     -  _(SIMPLON - Colombia)_
        -  _(Front-end|SCRUM Master)_
@@ -44,7 +50,7 @@
        -  _(Front-end|Back-end)_
 - Daniel Pinzón @[DanielKatt](https://github.com/DanielKatt)
     -  _(SIMPLON - Colombia)_
-       -  _(UX Design|Front-end)_
+       -  _(UX Design|Back-end)_
 - Lizette Sevillano @[LizzieSevC](https://github.com/LizzieSevC)
     -  _(SIMPLON - Colombia)_
        -  _(UX Design|Front-end)_
