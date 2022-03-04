@@ -3,6 +3,7 @@ import LogoMiguel from '../../assets/img/miguel logo.png';
 import LogoLiz from '../../assets/img/Lizzie logo.png';
 import LogoSanti from '../../assets/img/LogoSantiago.svg';
 import LogoDani from '../../assets/img/LogoDani.png';
+import LogoEstefy from '../../assets/img/LogoEstefy.png';
 import './Footer.css';
 
 
@@ -23,6 +24,8 @@ const Footer = () => {
     <a href='https://github.com/LizzieSevC'><img className="developerLogo" src={LogoLiz} alt={'LogoLizzie'}/></a>
     <a href='https://github.com/santilopezco'><img className='developerLogo' src={LogoSanti} alt={'logosanti'}/></a>
     <a href='https://github.com/DanielKatt'><img className='developerLogo' src={LogoDani} alt={'logoDani'}/></a>
+    <a href='https://github.com/EstefaniAzocar'><img className='developerLogo' src={LogoEstefy} alt={'logoEstefy'}/></a>
+
     </div>
 
 </footer>
