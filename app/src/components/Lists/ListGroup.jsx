@@ -1,11 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Form from "../Form/Form";
 import List from "../Lists/List";
 import './Lists.css';
+import todos from "../../api";
 
 const  ListGroup = (props) => {
     const {title, onChange}=props;
     const [todoList, setTodoList] = useState([]);
+    useEffect (() => {
+      async function fetchList(){
+        const {data} = await todos.get("/todos");
+        setTodoList(data);
+      }
+      fetchList();
+    }, [])
 
     const addTodo = (item) => {
       setTodoList((oldList) => [...oldList, item]);
