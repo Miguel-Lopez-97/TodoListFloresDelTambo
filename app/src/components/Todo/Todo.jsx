@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './Todo.css';
 
-const Todo = ({ title, completed, removeTodoItemProp }) => {
+const Todo = ({ title, completed, removeTodoItemProp, updateTodoItemProp }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [Value, setValue] = useState(title)
     const [tempValue, setTempValue] = useState(title);
@@ -13,6 +13,7 @@ const Todo = ({ title, completed, removeTodoItemProp }) => {
     const handleInputKeyDown = (e) => {
         const key = e.keyCode;
         if (key === 13) {
+            updateTodoItemProp({title:tempValue});
             setValue(tempValue);
             setIsEditing(false);
         } else if (key === 27) {
@@ -24,7 +25,11 @@ const Todo = ({ title, completed, removeTodoItemProp }) => {
         setTempValue(e.target.value);
     };
     const handleButtonClick = () => {
-        setCompleted((oldCompleted) => !oldCompleted);
+        setCompleted((oldCompleted) => {
+            const newState = !oldCompleted;
+            updateTodoItemProp({ completed: newState });
+            return newState;
+        });
     };
 
     return (

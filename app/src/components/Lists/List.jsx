@@ -2,12 +2,14 @@ import React from "react";
 import Todo from "../Todo/Todo";
 
 
-const List = ({ list, removeTodoListProp }) => {
+const List = ({ list, removeTodoListProp, updateTodoListProp }) => {
     const renderedList = list.map((item) => 
             <Todo   title={item.title} 
                     completed={item.completed}
-                    removeTodoItemProp={()=>removeTodoListProp(item.id)} 
-                    key={"task"+item.title} />
+                    removeTodoItemProp={()=>removeTodoListProp(item._id)} 
+                    updateTodoItemProp={(updatedTitle)=>updateTodoListProp(item._id, updatedTitle)} 
+                    key={"task"+item.title} 
+            />
             );
     return (
         <div className="ui grid center aligned">

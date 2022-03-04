@@ -7,6 +7,7 @@ import todos from "../../api";
 const  ListGroup = (props) => {
     const {title, onChange}=props;
     const [todoList, setTodoList] = useState([]);
+    
     useEffect (() => {
       async function fetchList(){
         const {data} = await todos.get("/todos");
@@ -15,18 +16,29 @@ const  ListGroup = (props) => {
       fetchList();
     }, [])
 
-    const addTodo = (item) => {
-      setTodoList((oldList) => [...oldList, item]);
+    const addTodo = async (item) => {
+      const {data} = await todos.post("/todos", item)
+      setTodoList((oldList) => [...oldList, data]);
     };
-    const removeTodo = (id) => {
-      setTodoList((oldList)=>oldList.filter((item)=>item.id!==id))
+    const removeTodo = async (id) => {
+      await todos.delete(`/todos/${id}`)
+      setTodoList((oldList)=>oldList.filter((item)=>item._id!==id))
+    };
+
+    const updateTodo = async (id, item) => {
+      await todos.put(`/todos/${id}`, item)
     };
 
     return <div className="ui container center aligned">
         <Form addTodo={addTodo}  key={'list_form_'+title}/>
-        <List removeTodoListProp={removeTodo} list={todoList}  key={title+'_list'}/>
+        <List 
+          removeTodoListProp={removeTodo} 
+          list={todoList}  
+          key={title+'_list'} 
+          updateTodoListProp={updateTodo}
+        />
         <button
-        onClick={onChange}
+        onClick={removeTodo}
         className="deleteListButton"
         >Eliminar lista</button>
     </div>;

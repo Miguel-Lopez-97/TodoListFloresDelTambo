@@ -1,18 +1,17 @@
 const express = require("express");
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
+const cors = require("cors");
 
 const PORT = 27017;
 const app = express();
 
 const todoRoutes = require("./routes/todoRoutes");
 
-/*const connectionOption = { useUnifiedTopology: true, 
-    useNewUrlParser:true, useFindAndModify:false };*/
 
 app.use(express.json());
-//app.use(cors());
+app.use(cors());
 
-mongoose.connect("mongodb://localhost/todolist" /*connectionOption*/)
+mongoose.connect("mongodb://localhost/todolist")
     .then(() => console.log("Connected successfully"))
     .catch((err) => console.error(err));
 
