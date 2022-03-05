@@ -50,6 +50,7 @@ const  ListGroup = (props) => {
           key={title+'_list'} 
           updateTodoListProp={updateTodo}
           titleList={title}
+          updateState={fetchList}
         />
         <button
         onClick={handleButtonClickErased}
@@ -63,6 +64,7 @@ const  ListGroup = (props) => {
           key={title+'_list_erased'} 
           updateTodoListProp={updateTodo}
           titleList={title}
+          updateState={fetchList}
           handleButtonClickErased={()=>handleButtonClickErased()}
         />
     </div>

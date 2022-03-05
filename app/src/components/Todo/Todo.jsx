@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './Todo.css';
 
-const Todo = ({ title, completed, updateTodoItemProp, erased }) => {
+const Todo = ({ title, completed, updateTodoItemProp, erased, updateState }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [Value, setValue] = useState(title)
     const [tempValue, setTempValue] = useState(title);
@@ -36,13 +36,14 @@ const Todo = ({ title, completed, updateTodoItemProp, erased }) => {
     const handleButtonClickErased = () => {
         setErased((oldCompleted) => {
             const newState = !oldCompleted;
+            updateState();
             updateTodoItemProp({ erased: newState });
             return newState;
         });
     };
 
     return (
-        <div className="row" style={{display:(erasedState ? "none" : "flex")}}>
+        <div className="row" style={{display:(erasedState ? "none" : "flex"), cursor:"text"}}>
             {
                 isEditing ?
                     <div className="column seven wide">

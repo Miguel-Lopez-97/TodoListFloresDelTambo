@@ -11,7 +11,8 @@ const FormCollection = ({ addTodo }) => {
     const handleFormSubmit = (e) => {
         e.preventDefault();
         if(inputValue.trim() ==="") return;
-        addTodo(inputValue);
+        let date = new Date().toLocaleDateString();
+        addTodo(inputValue+"-"+date);
         setInputValue("");
     }
     
@@ -21,7 +22,7 @@ const FormCollection = ({ addTodo }) => {
                 <div className="">
                     <div className="left floated mini ui">
                     <input id="textBox" value={inputValue} onChange={handleInputChange} type="text"
-                    placeholder="Ingrese el Nombre de la Nueva Lista"
+                    placeholder="Ingrese Nueva Lista"
                     />
                     </div>
 
