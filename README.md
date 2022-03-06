@@ -24,15 +24,15 @@
 
 ### Back-end TECHNOLOGIES:
  -  Express :   
-   1. open the terminal and write `-cd backend` to open de Back-end folder and install these dependencies  :   
-    - `npm --save express`
+   1. open the terminal and install these dependencies  :   
+    - `npm install express`
     
  -  Mongo :   
-   2. open the terminal and write `-cd backend` to open de Back-end folder and install these dependencies  :   
-    - `npm --save mongooes` 
+   2. open the terminal and install these dependencies  :   
+    - `npm install mongoose` 
     
  -  Cors :   
-   3. open the terminal and write `-cd backend` to open de Back-end folder and install these dependencies  :   
+   3. open the terminal and install these dependencies  :   
     - `npm install cors` 
     
  > ⚠️ _"To get the Application running you'll need to run the frontend, backend and the table in h2-console server at the same time."_
