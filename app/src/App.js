@@ -12,23 +12,21 @@ import './App.css'
 const App = () => {
   const [groupList, setGroupList] = useState([]);
 
+  //fetchs the fake API from backend, filters the index to avoid duplicated lists
   const fetchList = async() =>{
     const dataApi = await todos.get("/todos");
     const lists = await dataApi.data.map(item=>item.category)
-    console.log(dataApi)
-    console.log(lists)
-    setGroupList(lists);
+    const filteredList = await lists.filter((item, index) => lists.indexOf(item) === index)
+    setGroupList(filteredList);
   };
 
+  //initial fetch from backend
   useEffect (() => {
     fetchList();
   }, [])
 
   const addTodo = (item) => {
     setGroupList((oldList) => [...oldList, item]);
-  };
-  const removeList = listId => {
-    setGroupList(oldList=>oldList.filter(item=>item.id!==listId))
   };
 
   return (
@@ -38,9 +36,9 @@ const App = () => {
       <Header/>
       <Instructions/>
       <FormCollection addTodo={addTodo} key={'form_lists'}/>
-      {groupList.length>0?groupList.map(item =><div key={'section_list_'+item}>
+      {groupList.length>0?groupList.filter((item, index) => groupList.indexOf(item) === index).map(item => <div key={'section_list_'+item}>
         <Section key={'title_list_'+item}  title={item}/>
-        <ListGroup key={'list_'+item} title={item} onChange={()=>removeList(item.id)} id={item.id} />
+        <ListGroup key={'list_'+item} title={item} id={item.id} />
         </div>
       ):null
       }

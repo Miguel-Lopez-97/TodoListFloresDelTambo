@@ -33,7 +33,7 @@ const ListErased = ({ list, removeTodoListProp, updateTodoListProp, titleList, h
             ).filter(element => {
                 return element !== null;
               });
-        console.log(renderedListCompleted, renderedListUncompleted)
+    
     return (
         <>
         <Header/>
