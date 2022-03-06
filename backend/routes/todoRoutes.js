@@ -18,12 +18,7 @@ router.post("/", (req, res) => {
     });
 });
 
-<<<<<<< HEAD
-
-
-=======
 /* finds and update the info from the body(cards) */
->>>>>>> 94877f3a7eb9a9db3347b63e506d4cc18ec4e005
 router.put("/:id", (req, res) => {
     Todo.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true }, (err, result) => {
         if(err) throw new Error(err);
