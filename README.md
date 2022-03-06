@@ -29,7 +29,7 @@
     
  -  Mongo :   
    2. open the terminal and write `-cd backend` to open de Back-end folder and install these dependencies  :   
-    - `npm --save mongooes` 
+    - `npm --save mongoose` 
     
  -  Cors :   
    3. open the terminal and write `-cd backend` to open de Back-end folder and install these dependencies  :   
