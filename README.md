@@ -9,7 +9,8 @@
 - Figma (UX Design) :
     - [Click here to open the link](https://www.figma.com/file/SK2IFcunz6TZ1C4s3uLxwj/Flores-del-Tambo?node-id=36%3A2)
 - Zoom (communication)
-- Github pages (workplace repository)
+- Heroku pages (workplace repository)
+    - [Click here to open the link](https://todolistfloresdeltambo.herokuapp.com/)
 - Notion (Methodology SCRUM Master Agile)
     - [Click here to open the link](https://www.notion.so/e05fbce4d6534a4e87737e2c396ac3ca?v=54fb50a4d0044adfbb02d2817e178cc8)
 
