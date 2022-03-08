@@ -18,7 +18,7 @@ const connectionOptions = { useUnifiedTopology: true, useNewUrlParser: true, use
 app.use(express.json());
 app.use(cors());
 
-//Connet to database (second parameter is opional but is used in order to avoid  warnings in the terminal for previous verions)
+//Conned to database (second parameter is optional but is used in order to avoid  warnings in the terminal for previous verions)
 mongoose.connect(config.URI, connectionOptions)
     // if connection is succesful we want to call app and show a msg in console that it is working
     .then(() => console.log("Connected successfully"))
@@ -29,12 +29,12 @@ app.use("/todos", todoRoutes);
 
 console.log(`NODE_ENV=${config.NODE_ENV}`)
 
-app.use(express.static(path.join(__dirname, "client", "build")))
+app.use(express.static(path.join(__dirname, "app", "build")))
 
 app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+    res.sendFile(path.join(__dirname, "app", "build", "index.html"));
 });
 
 app.listen(config.PORT, () => {
-    console.log(`The server is listening on port: ${config.PORT}`);
+    console.log("The server is listening on port: "+config.PORT);
 });
