@@ -19,19 +19,22 @@ const  ListGroup = (props) => {
       fetchList();
     }, [])
 
+  //imports backend methods that interact with the database
+    //this method adds a new task
     const addTodo = async (item) => {
-      const {data} = await todos.post("/todos", item)
-      setTodoList((oldList) => [...oldList, data]);
+      const {data} = await todos.post("/todos", item) //saves it to the backend
+      setTodoList((oldList) => [...oldList, data]); //render DOM's changes
     };
+    //this method removes a task by ID
     const removeTodo = async (id) => {
-      await todos.delete(`/todos/${id}`)
-      setTodoList((oldList)=>oldList.filter((item)=>item._id!==id))
+      await todos.delete(`/todos/${id}`) 
+      setTodoList((oldList)=>oldList.filter((item)=>item._id!==id)) 
     };
-
+    //this method updates a task
     const updateTodo = async (id, item) => {
       await todos.put(`/todos/${id}`, item)
     };
-
+    //shows and hides the modal whit erased tasks
     const handleButtonClickErased = () => {
       fetchList();
       setModal((oldCompleted) => {
@@ -50,6 +53,7 @@ const  ListGroup = (props) => {
           key={title+'_list'} 
           updateTodoListProp={updateTodo}
           titleList={title}
+          updateState={fetchList}
         />
         <button
         onClick={handleButtonClickErased}
@@ -63,6 +67,7 @@ const  ListGroup = (props) => {
           key={title+'_list_erased'} 
           updateTodoListProp={updateTodo}
           titleList={title}
+          updateState={fetchList}
           handleButtonClickErased={()=>handleButtonClickErased()}
         />
     </div>

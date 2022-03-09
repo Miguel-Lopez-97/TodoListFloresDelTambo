@@ -31,6 +31,7 @@ h1{
     margin: auto;
     display: none;
     border: 20px solid #FEC89A;
+    box-shadow: 5px 5px 15px 5px #b1957c;
 }
 .activeModal{
     display: flex;

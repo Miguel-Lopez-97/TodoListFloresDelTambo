@@ -33,14 +33,15 @@ const ListErased = ({ list, removeTodoListProp, updateTodoListProp, titleList, h
             ).filter(element => {
                 return element !== null;
               });
-        console.log(renderedListCompleted, renderedListUncompleted)
+    
     return (
         <>
         <Header/>
         <div className="ui divModal">
-            <h1>Tareas Completadas Eliminadas</h1>
+            <h1>{titleList}</h1>
+            <h2>Tareas Completadas Eliminadas</h2>
             {renderedListCompleted.length>0?renderedListCompleted:<p>No hay Tareas Eliminadas</p>}
-            <h1>Tareas sin Completar Eliminadas</h1>
+            <h2>Tareas sin Completar Eliminadas</h2>
             {renderedListUncompleted.length>0?renderedListUncompleted:<p>No hay Tareas Eliminadas</p>}
             <button
         onClick={handleButtonClickErased}
