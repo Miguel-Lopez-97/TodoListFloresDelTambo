@@ -1,10 +1,3 @@
-# "🍃ToDoList Flores del Tambo🍃" 
-
- ![Image text](https://github.com/Miguel-Lopez-97/TodoListFloresDelTambo/blob/main/Logo-FloresArom%C3%A1ticas.png)
- 
- This project is an application With MERN, This is a CRUD for a ToDo List App for a Flower Company to improve its internal process
-- - - -
-
 ## TECHNOLOGIES USED :
 - Figma (UX Design) :
     - [Click here to open the link](https://www.figma.com/file/SK2IFcunz6TZ1C4s3uLxwj/Flores-del-Tambo?node-id=36%3A2)
